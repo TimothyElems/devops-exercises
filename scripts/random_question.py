@@ -1,6 +1,6 @@
-import random
 import optparse
 import os
+import secrets
 
 
 def main():
@@ -36,7 +36,7 @@ def main():
 
     while True:
         try:
-            question, answer = questions[random.randint(0, num_questions)]
+            question, answer = questions[secrets.SystemRandom().randint(0, num_questions)]
 
             if options.skip and not answer.strip():
                 continue
