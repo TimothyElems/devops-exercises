@@ -3,9 +3,9 @@ Question utils functions
 """
 
 import pathlib
-from random import choice
 from typing import List
 import re
+import secrets
 
 p = pathlib.Path(__file__).parent.parent.joinpath("README.md")
 
@@ -65,8 +65,8 @@ def get_challenges_count() -> int:
 # WIP WAITING FEEDBACK
 def get_random_question(question_list: List[str], with_answer=False):
     if with_answer:
-        return choice(get_answered_questions(question_list))
-    return choice(get_question_list(question_list))
+        return secrets.choice(get_answered_questions(question_list))
+    return secrets.choice(get_question_list(question_list))
 
 
 """Use this question_list. Unless you have already opened/worked/need the file, then don't or
